@@ -16,3 +16,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/biodata', function (){
+    return 'Nama : Davriwan Dzaky, NIM : 175150707111010';
+});
