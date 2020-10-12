@@ -64,4 +64,23 @@ public function destroy($id)
             ], 404);
         }
     }
+    public function update(Request $request, $id)
+    {
+        $products = Products::whereid($id)->update([
+            'name' => $request ->name,
+            'price' => $request ->price,
+            'rating' => $request ->rating,
+            'quantity' => $request ->quantity
+        ]);
+        if($products) {
+            return response()->json([
+                'message' => 'Produk Berhasil Update.',
+                'data' => $id
+        ], 200);
+    } else {
+        return response()->json([
+            'message' => 'Produk Gagal Update.'
+        ], 401);
+    }
+}
 }

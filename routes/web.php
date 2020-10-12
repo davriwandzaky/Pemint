@@ -24,6 +24,7 @@ $router->get('/biodata', function (){
 $router->get('hello/{name}', function($name){
     return 'Hello, '.$name;
 });
+
 $router->get('/products', 'ProductsController@index');
 
 $router->get('/products/{id}', 'ProductsController@show');
@@ -31,4 +32,8 @@ $router->get('/products/{id}', 'ProductsController@show');
 $router->post('/products', 'ProductsController@store');
 
 $router->delete('/products/{id}', 'ProductsController@destroy');
+
+$router->put('/products/{id}', 'ProductsController@update');
+
+
 
