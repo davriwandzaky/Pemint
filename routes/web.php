@@ -25,14 +25,17 @@ $router->get('hello/{name}', function($name){
     return 'Hello, '.$name;
 });
 
+//read
 $router->get('/products', 'ProductsController@index');
-
 $router->get('/products/{id}', 'ProductsController@show');
 
+//create
 $router->post('/products', 'ProductsController@store');
 
+//delete
 $router->delete('/products/{id}', 'ProductsController@destroy');
 
+//update
 $router->put('/products/{id}', 'ProductsController@update');
 
 
